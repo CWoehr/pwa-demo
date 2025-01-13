@@ -6,22 +6,39 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Angular Fire
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To connect FCM we are using the latest Version of AngularFire check https://github.com/angular/angularfire/blob/main/docs/messaging.md
 
-## Build
+## relevant Files
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[Service Worker for Notifications](/src/assets/firebase-messaging-sw.js)
+[Webservice to Process Notification Content when App is loaded](/src/app/messaging.service.ts)
 
-## Running unit tests
+## how to test
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. fill new Firebase Information in
+[app.module.ts](/src/app/app.module.ts)
+[Service Worker](/src/assets/firebase-messaging-sw.js)
 
-## Running end-to-end tests
+2. run
+'''
+ng build
+ng serve
+'''
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. copy fcm token from console
+'''
+my fcm token f8Xlr_Nho0ylT_GDNtE7ek:APA91bH5OvTthJo8-TKlpuYG3JgcqhiY_IyRbpwmuST2uzGlrIXYQaqIGy1j2wGM6dSzgMQIfkGWXLvOiCoERUKgQ0bW2Ego4S5zN9KavsyYC70YlmDM2iQ
+'''
 
-## Further help
+4. send testmessage via 
+https://console.firebase.google.com/project/{{your project id}}/notification/compose
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. check for 
+'''
+[firebase-messaging-sw.js] Received background message: 
+'''
+in console.
+
+6. If no Popup appears check Popup Settings on OS. (I wasted 4 hours because I forgot I disabled popups from all browsers.)
