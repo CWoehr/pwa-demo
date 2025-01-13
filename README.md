@@ -22,23 +22,23 @@ To connect FCM we are using the latest Version of AngularFire check https://gith
 [Service Worker](/src/assets/firebase-messaging-sw.js)
 
 2. run
-'''
+```
 ng build
 ng serve
-'''
+```
 
-3. copy fcm token from console
-'''
+4. copy fcm token from console
+```
 my fcm token f8Xlr_Nho0ylT_GDNtE7ek:APA91bH5OvTthJo8-TKlpuYG3JgcqhiY_IyRbpwmuST2uzGlrIXYQaqIGy1j2wGM6dSzgMQIfkGWXLvOiCoERUKgQ0bW2Ego4S5zN9KavsyYC70YlmDM2iQ
-'''
+```
 
-4. send testmessage via 
+6. send testmessage via 
 https://console.firebase.google.com/project/{{your project id}}/notification/compose
 
-5. check for 
-'''
+7. check for
+```
 [firebase-messaging-sw.js] Received background message: 
-'''
+```
 in console.
 
-6. If no Popup appears check Popup Settings on OS. (I wasted 4 hours because I forgot I disabled popups from all browsers.)
+9. If no Popup appears check Popup Settings on OS. (I wasted 4 hours because I forgot I disabled popups from all browsers.)
